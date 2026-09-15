@@ -1,1021 +1,427 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>VIET NAM ELITE SOCIETY</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #07111f;
-            color: white;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            background: rgba(4, 12, 25, 0.95);
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            border-bottom: 1px solid #284e75;
-        }
-
-        .logo {
-            color: #ffd54a;
-            font-size: 21px;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd54a;
-        }
-
-
-        /* ================= HERO ================= */
-
-        .hero {
-
-            min-height: 650px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-
-            padding: 40px 20px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    #1d527e 0%,
-                    #0b2037 40%,
-                    #050c16 80%
-                );
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .flag {
-            font-size: 65px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 55px;
-            color: #ffd54a;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 25px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            color: #c9d8e8;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-
-        /* ================= BUTTON ================= */
-
-        .btn {
-
-            display: inline-block;
-
-            margin-top: 30px;
-
-            padding: 14px 32px;
-
-            border-radius: 30px;
-
-            background: #ffd54a;
-
-            color: #07111f;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-
-        }
-
-        .btn:hover {
-
-            transform: scale(1.07);
-
-            background: #fff0a3;
-
-        }
-
-
-        /* ================= SECTION ================= */
-
-        section {
-
-            padding: 80px 8%;
-
-        }
-
-        .title {
-
-            text-align: center;
-
-            font-size: 36px;
-
-            color: #ffd54a;
-
-            margin-bottom: 45px;
-
-        }
-
-
-        /* ================= ABOUT ================= */
-
-        .about {
-
-            background: #0b1b2d;
-
-        }
-
-        .about-box {
-
-            max-width: 900px;
-
-            margin: auto;
-
-            text-align: center;
-
-            color: #d4e1ee;
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-        }
-
-
-        /* ================= STATS ================= */
-
-        .stats {
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 25px;
-
-            flex-wrap: wrap;
-
-            margin-top: 45px;
-
-        }
-
-        .stat {
-
-            width: 210px;
-
-            padding: 30px;
-
-            text-align: center;
-
-            background: #102a45;
-
-            border: 1px solid #284e75;
-
-            border-radius: 18px;
-
-            transition: 0.3s;
-
-        }
-
-        .stat:hover {
-
-            transform: translateY(-8px);
-
-            border-color: #ffd54a;
-
-        }
-
-        .stat-icon {
-
-            font-size: 38px;
-
-            margin-bottom: 12px;
-
-        }
-
-        .stat h3 {
-
-            color: #ffd54a;
-
-            font-size: 24px;
-
-        }
-
-
-        /* ================= ACTIVITIES ================= */
-
-        .cards {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(240px, 1fr));
-
-            gap: 25px;
-
-        }
-
-        .card {
-
-            background: #0d2035;
-
-            padding: 30px;
-
-            border-radius: 18px;
-
-            border: 1px solid #284e75;
-
-            transition: 0.3s;
-
-        }
-
-        .card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: #ffd54a;
-
-        }
-
-        .card-icon {
-
-            font-size: 40px;
-
-            margin-bottom: 15px;
-
-        }
-
-        .card h3 {
-
-            color: #ffd54a;
-
-            margin-bottom: 15px;
-
-            font-size: 22px;
-
-        }
-
-        .card p {
-
-            color: #c9d8e8;
-
-            line-height: 1.6;
-
-        }
-
-
-        /* ================= MEMBERS ================= */
-
-        .members {
-
-            background: #0b1b2d;
-
-        }
-
-        .member-box {
-
-            max-width: 700px;
-
-            margin: auto;
-
-            text-align: center;
-
-            background: #102a45;
-
-            padding: 40px;
-
-            border-radius: 20px;
-
-            border: 1px solid #284e75;
-
-        }
-
-        .member-number {
-
-            font-size: 55px;
-
-            font-weight: bold;
-
-            color: #ffd54a;
-
-        }
-
-        .progress {
-
-            width: 100%;
-
-            height: 18px;
-
-            background: #07111f;
-
-            border-radius: 20px;
-
-            margin-top: 25px;
-
-            overflow: hidden;
-
-        }
-
-        .progress-bar {
-
-            width: 8%;
-
-            height: 100%;
-
-            background: #ffd54a;
-
-            border-radius: 20px;
-
-        }
-
-        .member-text {
-
-            margin-top: 15px;
-
-            color: #c9d8e8;
-
-        }
-
-
-        /* ================= RULES ================= */
-
-        .rules {
-
-            background: #07111f;
-
-        }
-
-        .rules-box {
-
-            max-width: 800px;
-
-            margin: auto;
-
-        }
-
-        .rules ol {
-
-            color: #d4e1ee;
-
-            font-size: 18px;
-
-            line-height: 2;
-
-        }
-
-        .rules li {
-
-            margin-bottom: 5px;
-
-        }
-
-
-        /* ================= JOIN ================= */
-
-        .join {
-
-            text-align: center;
-
-            background:
-
-                linear-gradient(
-
-                    135deg,
-
-                    #153b60,
-
-                    #07111f
-
-                );
-
-        }
-
-        .join h2 {
-
-            color: #ffd54a;
-
-            font-size: 42px;
-
-            margin-bottom: 15px;
-
-        }
-
-        .join p {
-
-            color: #c9d8e8;
-
-            font-size: 18px;
-
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-
-            background: #040b14;
-
-            text-align: center;
-
-            padding: 35px;
-
-            color: #8fa6bd;
-
-            line-height: 1.8;
-
-        }
-
-        footer strong {
-
-            color: #ffd54a;
-
-        }
-
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 700px) {
-
-            header {
-
-                flex-direction: column;
-
-                gap: 15px;
-
-            }
-
-            nav a {
-
-                margin: 0 7px;
-
-                font-size: 13px;
-
-            }
-
-            .hero h1 {
-
-                font-size: 36px;
-
-            }
-
-            .hero h2 {
-
-                font-size: 20px;
-
-            }
-
-            .flag {
-
-                font-size: 50px;
-
-            }
-
-            section {
-
-                padding: 60px 5%;
-
-            }
-
-            .join h2 {
-
-                font-size: 32px;
-
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIET NAM ELITE SOCIETY</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#07111f;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#0b1c2e;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #23415d;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd54a;
+}
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:
+        linear-gradient(rgba(7,17,31,.85),rgba(7,17,31,.95)),
+        radial-gradient(circle at center,#16466b,#07111f 70%);
+}
+
+.flag{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#c8d6e5;
+    max-width:650px;
+    margin-bottom:25px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-main{
+    background:#ffd54a;
+    color:#07111f;
+}
+
+.btn-main:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 20px rgba(255,213,74,.3);
+}
+
+.btn-dark{
+    border:1px solid #ffd54a;
+    color:#ffd54a;
+}
+
+.btn-dark:hover{
+    background:#ffd54a;
+    color:#07111f;
+}
+
+section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    color:#ffd54a;
+    margin-bottom:40px;
+}
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#c8d6e5;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#0d2237;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #1d405d;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#ffd54a;
+}
+
+.card-icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#c8d6e5;
+}
+
+.rules{
+    max-width:800px;
+    margin:auto;
+}
+
+.rules li{
+    background:#0d2237;
+    margin:10px 0;
+    padding:15px 20px;
+    border-radius:10px;
+    border-left:4px solid #ffd54a;
+    list-style:none;
+}
+
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,#102f4b,#07111f);
+}
+
+.cta h2{
+    color:#ffd54a;
+    margin-bottom:15px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#050c15;
+    color:#8da4b8;
+    font-size:14px;
+}
+
+@media(max-width:700px){
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav a{
+        margin:0 6px;
+        font-size:14px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<header>
+    <div class="logo">♟️ VIET NAM ELITE SOCIETY</div>
 
-    <!-- ================= HEADER ================= -->
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#club">CLB</a>
+        <a href="#activities">Hoạt động</a>
+        <a href="#members">Thành viên</a>
+        <a href="#rules">Nội quy</a>
+    </nav>
+</header>
 
-    <header>
 
-        <div class="logo">
+<section class="hero" id="home">
 
-            ♟️ VIET NAM ELITE SOCIETY
+    <div class="flag">🇻🇳</div>
 
-        </div>
+    <h1>VIET NAM ELITE SOCIETY</h1>
 
+    <h2>♟️ Tinh hoa kỳ thủ Việt Nam ♟️</h2>
 
-        <nav>
+    <p>
+        Nơi hội tụ những kỳ thủ Việt Nam, cùng học hỏi,
+        thi đấu và chinh phục những đỉnh cao mới của cờ vua.
+    </p>
 
-            <a href="#home">
-                Trang chủ
-            </a>
-
-            <a href="#about">
-                CLB
-            </a>
-
-            <a href="#activities">
-                Hoạt động
-            </a>
-
-            <a href="#members">
-                Thành viên
-            </a>
-
-            <a href="#rules">
-                Nội quy
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- ================= HOME ================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <div class="flag">
-                🇻🇳
-            </div>
-
-            <h1>
-                VIET NAM ELITE SOCIETY
-            </h1>
-
-            <h2>
-                ♟️ Tinh hoa kỳ thủ Việt Nam ♟️
-            </h2>
-
-            <p>
-
-                <strong>
-                    THINK • FIGHT • WIN
-                </strong>
-
-                <br><br>
-
-                Nơi hội tụ những kỳ thủ Việt Nam,
-                cùng học hỏi, thi đấu và chinh phục
-                những đỉnh cao mới của cờ vua.
-
-            </p>
-
-
-            <!-- NÚT GIA NHẬP -->
-
-            <a
-                href="https://www.chess.com/club/vi-t-nam-elite-chess-society"
-                class="btn"
-                target="_blank"
-            >
-
-                GIA NHẬP CLB 🇻🇳
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section
-        class="about"
-        id="about"
-    >
-
-        <h2 class="title">
-
-            ♟️ VỀ CLB
-
-        </h2>
-
-
-        <div class="about-box">
-
-            <p>
-
-                <strong>
-                    VIET NAM ELITE SOCIETY
-                </strong>
-                là cộng đồng dành cho những
-                người yêu cờ vua Việt Nam.
-
-            </p>
-
-            <br>
-
-            <p>
-
-                Chúng tôi xây dựng một môi trường
-                <strong>
-                    cạnh tranh lành mạnh,
-                    đoàn kết và phát triển
-                </strong>,
-
-                nơi mỗi kỳ thủ có thể học hỏi,
-                giao lưu và nâng cao trình độ.
-
-            </p>
-
-            <br>
-
-            <p>
-
-                🇻🇳 Một đất nước.
-                ♟️ Một cộng đồng.
-                🏆 Một mục tiêu.
-
-            </p>
-
-        </div>
-
-
-        <!-- STATS -->
-
-        <div class="stats">
-
-
-            <div class="stat">
-
-                <div class="stat-icon">
-                    ♟️
-                </div>
-
-                <h3>
-                    CHESS
-                </h3>
-
-                <p>
-                    Đam mê cờ vua
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <div class="stat-icon">
-                    🇻🇳
-                </div>
-
-                <h3>
-                    VIỆT NAM
-                </h3>
-
-                <p>
-                    Kỳ thủ Việt Nam
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <div class="stat-icon">
-                    🏆
-                </div>
-
-                <h3>
-                    ELITE
-                </h3>
-
-                <p>
-                    Không ngừng vươn lên
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= ACTIVITIES ================= -->
-
-    <section
-        id="activities"
-    >
-
-        <h2 class="title">
-
-            🔥 HOẠT ĐỘNG CLB
-
-        </h2>
-
-
-        <div class="cards">
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🏆
-                </div>
-
-                <h3>
-                    Giải đấu nội bộ
-                </h3>
-
-                <p>
-
-                    Các giải đấu dành cho thành viên
-                    nhằm tạo môi trường thi đấu
-                    và cạnh tranh lành mạnh.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Team Match
-                </h3>
-
-                <p>
-
-                    Thi đấu đồng đội với các CLB
-                    và cộng đồng cờ vua khác.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🧠
-                </div>
-
-                <h3>
-                    Luyện tập & Phân tích
-                </h3>
-
-                <p>
-
-                    Cùng nhau phân tích ván đấu,
-                    chia sẻ chiến thuật và kinh nghiệm.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🇻🇳
-                </div>
-
-                <h3>
-                    Giao lưu kỳ thủ
-                </h3>
-
-                <p>
-
-                    Kết nối những người yêu cờ
-                    trên khắp Việt Nam.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= MEMBERS ================= -->
-
-    <section
-        class="members"
-        id="members"
-    >
-
-        <h2 class="title">
-
-            👥 TIẾN ĐỘ THÀNH VIÊN
-
-        </h2>
-
-
-        <div class="member-box">
-
-            <div class="member-number">
-
-                4 / 50
-
-            </div>
-
-            <p>
-
-                thành viên
-
-            </p>
-
-
-            <div class="progress">
-
-                <div class="progress-bar"></div>
-
-            </div>
-
-
-            <p class="member-text">
-
-                🎯 Mục tiêu:
-                <strong>
-                    50 thành viên
-                </strong>
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= RULES ================= -->
-
-    <section
-        class="rules"
-        id="rules"
-    >
-
-        <h2 class="title">
-
-            📜 NỘI QUY CLB
-
-        </h2>
-
-
-        <div class="rules-box">
-
-            <ol>
-
-                <li>
-                    Tôn trọng tất cả thành viên.
-                </li>
-
-                <li>
-                    Không spam, quảng cáo hoặc gây rối.
-                </li>
-
-                <li>
-                    Không gian lận trong các ván cờ
-                    và giải đấu.
-                </li>
-
-                <li>
-                    Không sử dụng ngôn từ xúc phạm
-                    hoặc khiêu khích.
-                </li>
-
-                <li>
-                    Giữ gìn hình ảnh và tinh thần
-                    của CLB.
-                </li>
-
-                <li>
-                    Tuân thủ quyết định của
-                    Ban quản trị.
-                </li>
-
-            </ol>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= JOIN ================= -->
-
-    <section class="join">
-
-        <h2>
-
-            🔥 SẴN SÀNG GIA NHẬP?
-
-        </h2>
-
-
-        <p>
-
-            Hãy cùng chúng tôi xây dựng
-            cộng đồng cờ vua Việt Nam!
-
-        </p>
-
+    <div class="buttons">
 
         <a
-            href="https://www.chess.com/club/vi-t-nam-elite-chess-society"
-            class="btn"
-            target="_blank"
-        >
-
-            GIA NHẬP CLB 🇻🇳
-
+        href="https://www.chess.com/club/vi-t-nam-elite-chess-society"
+        target="_blank"
+        class="btn btn-main">
+        🇻🇳 GIA NHẬP CLB
         </a>
 
-    </section>
+        <a
+        href="#activities"
+        class="btn btn-dark">
+        XEM HOẠT ĐỘNG
+        </a>
+
+    </div>
+
+</section>
 
 
+<section id="club">
 
-    <!-- ================= FOOTER ================= -->
+    <h2 class="section-title">♟️ VỀ CLB</h2>
 
-    <footer>
-
-        <p>
-
-            ♟️
-            <strong>
-                VIET NAM ELITE SOCIETY
-            </strong>
-
-        </p>
-
-        <p>
-
-            🇻🇳 THINK • FIGHT • WIN
-
-        </p>
+    <div class="about">
 
         <p>
-
-            EST. 2026
-
+            <b>VIET NAM ELITE SOCIETY</b> là cộng đồng dành cho
+            những người yêu thích cờ vua Việt Nam.
         </p>
+
+        <br>
 
         <p>
-
-            © 2026 Viet Nam Elite Society
-
+            Chúng ta cùng nhau luyện tập, thi đấu, giao lưu
+            và phát triển trình độ cờ vua trong một môi trường
+            thân thiện và chuyên nghiệp.
         </p>
 
-    </footer>
+    </div>
 
+</section>
+
+
+<section id="activities">
+
+    <h2 class="section-title">🔥 HOẠT ĐỘNG</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>Giải đấu nội bộ</h3>
+            <p>
+                Những giải đấu hấp dẫn dành riêng cho thành viên CLB.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">⚔️</div>
+            <h3>Team Match</h3>
+            <p>
+                Cùng đồng đội chiến đấu trong những trận đấu đội.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Luyện tập & Phân tích</h3>
+            <p>
+                Cùng phân tích ván cờ và nâng cao trình độ.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Giao lưu kỳ thủ</h3>
+            <p>
+                Kết nối và giao lưu với những kỳ thủ Việt Nam.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="members">
+
+    <h2 class="section-title">👑 THÀNH VIÊN</h2>
+
+    <div class="about">
+
+        <p>
+            Mỗi kỳ thủ đều là một phần quan trọng của
+            <b>VIET NAM ELITE SOCIETY</b>.
+        </p>
+
+        <br>
+
+        <p>
+            Cùng nhau xây dựng một cộng đồng cờ vua Việt Nam
+            đoàn kết, mạnh mẽ và văn minh.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="rules">
+
+    <h2 class="section-title">📜 NỘI QUY CLB</h2>
+
+    <div class="rules">
+
+        <ul>
+
+            <li>🇻🇳 Tôn trọng tất cả thành viên.</li>
+
+            <li>🚫 Không spam, quảng cáo hoặc gây rối.</li>
+
+            <li>♟️ Không gian lận trong các ván cờ và giải đấu.</li>
+
+            <li>💬 Không sử dụng ngôn từ xúc phạm, khiêu khích.</li>
+
+            <li>🏆 Giữ gìn hình ảnh và tinh thần của CLB.</li>
+
+            <li>👑 Tuân thủ quyết định của Ban quản trị.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<section class="cta">
+
+    <h2>🇻🇳 HÃY CÙNG CHÚNG TÔI CHINH PHỤC BÀN CỜ!</h2>
+
+    <p>
+        THINK • FIGHT • WIN
+    </p>
+
+    <br>
+
+    <a
+    href="https://www.chess.com/club/vi-t-nam-elite-chess-society"
+    target="_blank"
+    class="btn btn-main">
+    ♟️ GIA NHẬP VIET NAM ELITE SOCIETY
+    </a>
+
+</section>
+
+
+<footer>
+
+    ♟️ VIET NAM ELITE SOCIETY 🇻🇳
+    <br>
+    THINK • FIGHT • WIN
+    <br><br>
+    EST. 2026
+
+</footer>
 
 </body>
-
 </html>
